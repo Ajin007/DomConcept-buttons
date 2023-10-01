@@ -1,0 +1,24 @@
+1. npm init -y -----> package.json file will be created, where you shall add your requirementsajinroch007@chat.com
+2. npm install bootstrap -----> Bootstrap file will be added like dependencies in package-lock.json
+3. Create folder -----> SCSS-->custom.scss-->@import '~bootstrap/scss/bootstrap'; 
+4. npm install node-sass --save-dev
+    npm: npm (Node Package Manager) is a tool that helps you manage packages (libraries, modules, and dependencies) for your Node.js projects. It allows you to easily install and manage third-party packages.
+
+    install: This is the npm command used to install packages.
+
+    node-sass: node-sass is a Node.js module that compiles SCSS (Sass) code into regular CSS. SCSS is a popular CSS preprocessor that allows you to write CSS with added features like variables, nesting, and mixins.
+
+    --save-dev: The --save-dev flag tells npm to save node-sass as a development dependency in your project. Development dependencies are packages that are necessary for building or testing your project but are not needed in the production environment. They are typically used for build tools, testing frameworks, and other development-related tasks.
+
+So, when yourun npm install node-sass --save-dev, you're adding node-sass to your project's package.json file under the devDependencies section. This allows you to easily manage and share the development tools and dependencies required to compile SCSS to CSS during development.
+5. Add script to compile scss to CSS
+    "scripts": {
+  "build:scss": "node-sass custom.scss custom.css"
+}
+6. To run build:scss
+npm run build:scss
+
+7. To specify the output directory change the script like this 
+"scripts": {
+  "build:scss": "node-sass custom.scss custom.css -o ./dist"
+}
